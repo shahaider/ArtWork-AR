@@ -15,6 +15,8 @@ class ARViewVC: UIViewController,ARSCNViewDelegate,UIImagePickerControllerDelega
     @IBOutlet weak var actionButton: UIButton!
     @IBOutlet weak var PlaneStatus: UILabel!
     
+    var selectedImage : UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +31,11 @@ class ARViewVC: UIViewController,ARSCNViewDelegate,UIImagePickerControllerDelega
         let scene = SCNScene()
         
         self.ARsceneview.scene = scene
+        
+        
+        // INTRODUCING TAP GESTURE
+        let tapping = UITapGestureRecognizer(target: self, action: #selector(addArt))
+        ARsceneview.addGestureRecognizer(tapping)
 
     }
 
@@ -39,21 +46,61 @@ class ARViewVC: UIViewController,ARSCNViewDelegate,UIImagePickerControllerDelega
         
     }
   
+    // PLANE RENDERING
+    
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        if anchor is ARPlaneAnchor {
         
-        DispatchQueue.main.async {
+            
+            DispatchQueue.main.async {
             guard  anchor is ARPlaneAnchor else{
                 return
             }
             self.actionButton.isHidden = false
             self.PlaneStatus.isHidden = false
+            
+                let plane = anchor as! ARPlaneAnchor
+                
+                let floor = SCNPlane(width: CGFloat(plane.extent.x), height: CGFloat(plane.extent.x))
+                
+                let floorNode = SCNNode(geometry: floor)
+                
+                floorNode.simdPosition = simd_float3(plane.center.x, 0, plane.center.z)
+                
+                floorNode.eulerAngles.x = -Float.pi/2
+                
+                floorNode.opacity = 0.25
+                
+                node.addChildNode(floorNode)
+            
+            
         }
         DispatchQueue.main.asyncAfter(deadline: .now()+3) {
             self.PlaneStatus.isHidden = true
         }
         
+        }
         
     }
+    
+//    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+//        if anchor is ARPlaneAnchor{
+//
+//            let planeAnchor = anchor as! ARPlaneAnchor
+//
+//            let planeNode = node.childNodes.first
+//
+//            let plane = planeNode?.geometry as! SCNPlane
+//
+//            planeNode?.simdPosition = simd_float3(planeAnchor.center.x, 0, planeAnchor.center.z)
+//
+//            plane.width = CGFloat(planeAnchor.extent.x)
+//            plane.height = CGFloat(planeAnchor.extent.z)
+//
+//
+//        }
+//    }
+
     
     
     @IBAction func addbutton(_ sender: Any) {
@@ -81,7 +128,7 @@ class ARViewVC: UIViewController,ARSCNViewDelegate,UIImagePickerControllerDelega
                 
             }
         }))
-        
+        // "CANCEL" OPTION
         alertVC.addAction(UIAlertAction(title: "CANCEL", style: .default, handler: nil))
         self.present(alertVC, animated: true, completion: nil)
 
@@ -92,15 +139,51 @@ class ARViewVC: UIViewController,ARSCNViewDelegate,UIImagePickerControllerDelega
         
         // storing IMAGE
         
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        let chooseimage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        self.selectedImage = chooseimage
+        
+        
         
         // dismiss picker
         
         picker.dismiss(animated: true, completion: nil)
     }
     
+    // FUNCTION WILL HANDLE CANCEL OPERATION
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
     
-}
+    @objc func addArt(recognizer: UITapGestureRecognizer){
+        let choosenView = recognizer.view as! ARSCNView
+        let location = recognizer.location(in: choosenView)
+        
+    
+            
+            let HitResult = choosenView.hitTest(location, types: .existingPlane)
+        
+        if !HitResult.isEmpty && selectedImage != nil{
+            
+            let hitPt = HitResult.first
+            let image = self.selectedImage!.cgImage
+            let FramePlane = SCNPlane(width: 0.2, height: 0.2)
+            
+            FramePlane.firstMaterial?.diffuse.contents = UIImage(cgImage: image!)
+            
+            
+            
+            let frameNode = SCNNode(geometry: FramePlane)
+            frameNode.position = SCNVector3(CGFloat((hitPt?.worldTransform.columns.3.x)!), CGFloat((hitPt?.worldTransform.columns.3.y)!), CGFloat((hitPt?.worldTransform.columns.3.z)!))
+//            frameNode.eulerAngles.z = -Float.pi/2
+            
+            self.ARsceneview.scene.rootNode.addChildNode(frameNode)
+        }
+       
+
+            
+        }
+        
+        
+    }
+
