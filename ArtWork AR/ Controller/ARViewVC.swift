@@ -8,6 +8,7 @@
 
 import UIKit
 import ARKit
+import  CoreLocation
 
 class ARViewVC: UIViewController,ARSCNViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
@@ -15,6 +16,11 @@ class ARViewVC: UIViewController,ARSCNViewDelegate,UIImagePickerControllerDelega
     @IBOutlet weak var actionButton: UIButton!
     @IBOutlet weak var PlaneStatus: UILabel!
     
+    
+    // creating location Manager variable
+    let locationManager = CLLocationManager()
+    
+    // variable which will store imagepicker selected image
     var selectedImage : UIImage?
     
     override func viewDidLoad() {
@@ -36,6 +42,16 @@ class ARViewVC: UIViewController,ARSCNViewDelegate,UIImagePickerControllerDelega
         // INTRODUCING TAP GESTURE
         let tapping = UITapGestureRecognizer(target: self, action: #selector(addArt))
         ARsceneview.addGestureRecognizer(tapping)
+        
+        
+        // initialize location manager essential configuration
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.startUpdatingLocation()
+        
+        
+        // test current location coordinate
+        print(locationManager.location?.coordinate.latitude, locationManager.location?.coordinate.longitude)
 
     }
 
@@ -155,11 +171,15 @@ class ARViewVC: UIViewController,ARSCNViewDelegate,UIImagePickerControllerDelega
         picker.dismiss(animated: true, completion: nil)
     }
     
+    
+    // Rendering ArtWork
     @objc func addArt(recognizer: UITapGestureRecognizer){
+        
         let choosenView = recognizer.view as! ARSCNView
         let location = recognizer.location(in: choosenView)
         
-    
+        print(locationManager.location?.coordinate)
+
             
             let HitResult = choosenView.hitTest(location, types: .existingPlane)
         
@@ -177,7 +197,13 @@ class ARViewVC: UIViewController,ARSCNViewDelegate,UIImagePickerControllerDelega
             frameNode.position = SCNVector3(CGFloat((hitPt?.worldTransform.columns.3.x)!), CGFloat((hitPt?.worldTransform.columns.3.y)!), CGFloat((hitPt?.worldTransform.columns.3.z)!))
 //            frameNode.eulerAngles.z = -Float.pi/2
             
+        
+            
             self.ARsceneview.scene.rootNode.addChildNode(frameNode)
+            
+        
+            
+            
         }
        
 

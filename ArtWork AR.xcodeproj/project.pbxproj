@@ -7,20 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84818BCB10840242EC64392D /* Pods_ArtWork_AR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A291E4C1E1386B1B9852B921 /* Pods_ArtWork_AR.framework */; };
+		F20D2C9C1FBB2A3D00D13D4E /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20D2C9B1FBB2A3D00D13D4E /* RegisterVC.swift */; };
 		F2219EC41FB08A7E00A9C7A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2219EC31FB08A7E00A9C7A7 /* AppDelegate.swift */; };
-		F2219EC61FB08A7E00A9C7A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2219EC51FB08A7E00A9C7A7 /* ViewController.swift */; };
 		F2219EC91FB08A7E00A9C7A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2219EC71FB08A7E00A9C7A7 /* Main.storyboard */; };
 		F2219ECB1FB08A7E00A9C7A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2219ECA1FB08A7E00A9C7A7 /* Assets.xcassets */; };
 		F2219ECE1FB08A7E00A9C7A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2219ECC1FB08A7E00A9C7A7 /* LaunchScreen.storyboard */; };
 		F2219ED61FB09F9600A9C7A7 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2219ED51FB09F9600A9C7A7 /* DashboardVC.swift */; };
 		F2219ED81FB09FB500A9C7A7 /* ARViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2219ED71FB09FB500A9C7A7 /* ARViewVC.swift */; };
 		F2219EDA1FB09FD100A9C7A7 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2219ED91FB09FD100A9C7A7 /* SettingVC.swift */; };
+		F26CC0801FBABD66008BB5F0 /* globalSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26CC07F1FBABD66008BB5F0 /* globalSetting.swift */; };
+		F2AD58A41FBC821A00336B22 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AD58A31FBC821A00336B22 /* MainVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1CF8D7B7DE2BC6AA8B31E76F /* Pods-ArtWork AR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtWork AR.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArtWork AR/Pods-ArtWork AR.release.xcconfig"; sourceTree = "<group>"; };
+		3C82FBC0EC4256338E9ABE7C /* Pods-ArtWork AR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtWork AR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArtWork AR/Pods-ArtWork AR.debug.xcconfig"; sourceTree = "<group>"; };
+		A291E4C1E1386B1B9852B921 /* Pods_ArtWork_AR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtWork_AR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F20D2C9B1FBB2A3D00D13D4E /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		F2219EC01FB08A7E00A9C7A7 /* ArtWork AR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ArtWork AR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2219EC31FB08A7E00A9C7A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F2219EC51FB08A7E00A9C7A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F2219EC81FB08A7E00A9C7A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F2219ECA1FB08A7E00A9C7A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2219ECD1FB08A7E00A9C7A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -28,6 +34,8 @@
 		F2219ED51FB09F9600A9C7A7 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		F2219ED71FB09FB500A9C7A7 /* ARViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewVC.swift; sourceTree = "<group>"; };
 		F2219ED91FB09FD100A9C7A7 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		F26CC07F1FBABD66008BB5F0 /* globalSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globalSetting.swift; sourceTree = "<group>"; };
+		F2AD58A31FBC821A00336B22 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84818BCB10840242EC64392D /* Pods_ArtWork_AR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DEE9C5B411D59DFFCA6AE9D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A291E4C1E1386B1B9852B921 /* Pods_ArtWork_AR.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		56B65ACBDEEB396501F755AF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3C82FBC0EC4256338E9ABE7C /* Pods-ArtWork AR.debug.xcconfig */,
+				1CF8D7B7DE2BC6AA8B31E76F /* Pods-ArtWork AR.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F2219EB71FB08A7E00A9C7A7 = {
 			isa = PBXGroup;
 			children = (
 				F2219EC21FB08A7E00A9C7A7 /* ArtWork AR */,
 				F2219EC11FB08A7E00A9C7A7 /* Products */,
+				56B65ACBDEEB396501F755AF /* Pods */,
+				1DEE9C5B411D59DFFCA6AE9D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,16 +89,26 @@
 			isa = PBXGroup;
 			children = (
 				F2219EC31FB08A7E00A9C7A7 /* AppDelegate.swift */,
-				F2219EC51FB08A7E00A9C7A7 /* ViewController.swift */,
 				F2219EC71FB08A7E00A9C7A7 /* Main.storyboard */,
 				F2219ECA1FB08A7E00A9C7A7 /* Assets.xcassets */,
 				F2219ECC1FB08A7E00A9C7A7 /* LaunchScreen.storyboard */,
 				F2219ECF1FB08A7E00A9C7A7 /* Info.plist */,
+				F2AD58A51FBC832A00336B22 /*  Controller */,
+				F26CC07F1FBABD66008BB5F0 /* globalSetting.swift */,
+			);
+			path = "ArtWork AR";
+			sourceTree = "<group>";
+		};
+		F2AD58A51FBC832A00336B22 /*  Controller */ = {
+			isa = PBXGroup;
+			children = (
 				F2219ED51FB09F9600A9C7A7 /* DashboardVC.swift */,
 				F2219ED71FB09FB500A9C7A7 /* ARViewVC.swift */,
 				F2219ED91FB09FD100A9C7A7 /* SettingVC.swift */,
+				F20D2C9B1FBB2A3D00D13D4E /* RegisterVC.swift */,
+				F2AD58A31FBC821A00336B22 /* MainVC.swift */,
 			);
-			path = "ArtWork AR";
+			path = " Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,9 +118,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F2219ED21FB08A7E00A9C7A7 /* Build configuration list for PBXNativeTarget "ArtWork AR" */;
 			buildPhases = (
+				5AAF2B6CEAEAAC70F984D15B /* [CP] Check Pods Manifest.lock */,
 				F2219EBC1FB08A7E00A9C7A7 /* Sources */,
 				F2219EBD1FB08A7E00A9C7A7 /* Frameworks */,
 				F2219EBE1FB08A7E00A9C7A7 /* Resources */,
+				EE2CC9BF2657F2E1A045A716 /* [CP] Embed Pods Frameworks */,
+				F81568E779918ABCB12DE301 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -140,14 +181,74 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5AAF2B6CEAEAAC70F984D15B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ArtWork AR-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE2CC9BF2657F2E1A045A716 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ArtWork AR/Pods-ArtWork AR-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ArtWork AR/Pods-ArtWork AR-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F81568E779918ABCB12DE301 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ArtWork AR/Pods-ArtWork AR-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F2219EBC1FB08A7E00A9C7A7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F2219ED81FB09FB500A9C7A7 /* ARViewVC.swift in Sources */,
-				F2219EC61FB08A7E00A9C7A7 /* ViewController.swift in Sources */,
+				F26CC0801FBABD66008BB5F0 /* globalSetting.swift in Sources */,
 				F2219EDA1FB09FD100A9C7A7 /* SettingVC.swift in Sources */,
+				F20D2C9C1FBB2A3D00D13D4E /* RegisterVC.swift in Sources */,
+				F2AD58A41FBC821A00336B22 /* MainVC.swift in Sources */,
 				F2219ED61FB09F9600A9C7A7 /* DashboardVC.swift in Sources */,
 				F2219EC41FB08A7E00A9C7A7 /* AppDelegate.swift in Sources */,
 			);
@@ -284,6 +385,7 @@
 		};
 		F2219ED31FB08A7E00A9C7A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C82FBC0EC4256338E9ABE7C /* Pods-ArtWork AR.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +401,7 @@
 		};
 		F2219ED41FB08A7E00A9C7A7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CF8D7B7DE2BC6AA8B31E76F /* Pods-ArtWork AR.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
