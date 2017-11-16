@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class SettingVC: UIViewController {
 
@@ -15,9 +17,17 @@ class SettingVC: UIViewController {
     @IBOutlet weak var paneSlider: UISlider!
     
     
+    let username = globalSetting.userName
+    let tokenID = globalSetting.tokenID
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        print("********")
+        print("userid:\(username)")
+        print("\n tokenid: \(tokenID)")
+        print("********")
         // Do any additional setup after loading the view.
     }
 
@@ -35,6 +45,26 @@ class SettingVC: UIViewController {
     
     @IBAction func paneSetting(_ sender: Any) {
     }
+    @IBAction func logoutButton(_ sender: Any) {
+        
+        Alamofire.request("https://exhibit-irl.com/api.php/?func=logout&username\(username)=&token=\(tokenID)", method: .post, parameters: nil)
+            .validate(contentType: ["application/json"])
+            .responseJSON { (response:DataResponse<Any>) in
+                
+                //                print(response)
+                
+                print("\n\n ********** JSON  Response ***********")
+                let json = JSON(response.value)
+                
+                
+                // check output
+                                    print(json)
+                
+                // parse response data
+                let status = json["data"][0]["status"].string!
+                let message = json["data"][0]["message"].string
+    }
     
 
+}
 }
