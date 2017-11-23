@@ -23,8 +23,6 @@ class ForgetVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        self.enterUser = nil
-//        self.enterEmail = nil
         
     }
 
@@ -36,6 +34,8 @@ class ForgetVC: UIViewController {
     
         print(self.enterUser, self.enterEmail)
 
+        
+        // IF USER ENTER EMAIL ADDRESS FOR RESET PASSWORD
         if (self.enterUser?.isEmpty)! && !(self.enterEmail?.isEmpty)!{
             
             print(self.enterEmail!)
@@ -69,7 +69,8 @@ class ForgetVC: UIViewController {
             }
         }
         
-        
+            // IF USER ENTER USER ID FOR RESET PASSWORD
+
         else if (self.enterEmail?.isEmpty)! && !(self.enterUser?.isEmpty)!{
             print(self.enterUser!)
 
@@ -103,6 +104,8 @@ class ForgetVC: UIViewController {
             }
         }
         
+            
+            // BOTH TEXT FIELD IN EMPTY
         else{
             let alertVC = UIAlertController(title: "Error", message: "Filled any one field", preferredStyle: .alert)
             alertVC.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))

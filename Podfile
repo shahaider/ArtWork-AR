@@ -10,4 +10,9 @@ pod 'Alamofire'
 pod 'SwiftyJSON'
 
 pod 'IQKeyboardManagerSwift'
+
+pod 'ARCL'
+
+pod 'CircleMenu'
+
 end
