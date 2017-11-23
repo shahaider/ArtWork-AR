@@ -39,7 +39,10 @@ class ArtAnnotation: LocationNode{
 
         // Pane
 
-        let panePlane = SCNPlane(width: 3, height: 2)
+        
+        print(globalSetting.globalWidth)
+        print(globalSetting.globalheight)
+        let panePlane = SCNPlane(width: CGFloat(globalSetting.globalWidth), height: CGFloat(globalSetting.globalheight))
         panePlane.firstMaterial?.diffuse.contents = UIImage(named: "pane.png")
         panePlane.name =  "Pane"
         let paneNode = SCNNode(geometry: panePlane)

@@ -11,9 +11,10 @@ import Foundation
 
 struct globalSetting{
     
-    var globalRadius:Float = 2
-    var globalPane:Float = 2
-    var GlobalUnit = "KM"
+    static var globalRadius:Float = 500
+    static var globalWidth:Float = 3
+    static var globalheight : Float = 2
+    static var GlobalUnit = "KM"
     
     static var tokenID: String = ""
     static var userName: String = ""

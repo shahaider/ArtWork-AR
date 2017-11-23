@@ -26,7 +26,6 @@
 		F2AD58A41FBC821A00336B22 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AD58A31FBC821A00336B22 /* MainVC.swift */; };
 		F2B9B12F1FBDE0A5007CEBF8 /* ForgetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B9B12E1FBDE0A5007CEBF8 /* ForgetVC.swift */; };
 		F2C2B3AC1FC31D8600989214 /* ArtAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C2B3AB1FC31D8600989214 /* ArtAnnotation.swift */; };
-		F2C2B3AE1FC3277E00989214 /* dummyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C2B3AD1FC3277E00989214 /* dummyAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,7 +52,6 @@
 		F2AD58A31FBC821A00336B22 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		F2B9B12E1FBDE0A5007CEBF8 /* ForgetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetVC.swift; sourceTree = "<group>"; };
 		F2C2B3AB1FC31D8600989214 /* ArtAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtAnnotation.swift; sourceTree = "<group>"; };
-		F2C2B3AD1FC3277E00989214 /* dummyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dummyAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,10 +115,7 @@
 				F2219ECC1FB08A7E00A9C7A7 /* LaunchScreen.storyboard */,
 				F2219ECF1FB08A7E00A9C7A7 /* Info.plist */,
 				F2AD58A51FBC832A00336B22 /*  Controller */,
-				F26CC07F1FBABD66008BB5F0 /* globalSetting.swift */,
-				F2C2B3AB1FC31D8600989214 /* ArtAnnotation.swift */,
-				F2C2B3AD1FC3277E00989214 /* dummyAPI.swift */,
-				F2716BD11FC5C85D0018711F /* PaneAnnotation.swift */,
+				F2C5AC9D1FC701D200A323BA /* Model */,
 			);
 			path = "ArtWork AR";
 			sourceTree = "<group>";
@@ -137,6 +132,16 @@
 				F235C12C1FBF13BE00BD3E09 /* exhibitVC.swift */,
 			);
 			path = " Controller";
+			sourceTree = "<group>";
+		};
+		F2C5AC9D1FC701D200A323BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F26CC07F1FBABD66008BB5F0 /* globalSetting.swift */,
+				F2C2B3AB1FC31D8600989214 /* ArtAnnotation.swift */,
+				F2716BD11FC5C85D0018711F /* PaneAnnotation.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F2F81E1C1FC1A6B200CE9F97 /* image */ = {
@@ -295,7 +300,6 @@
 				F20D2C9C1FBB2A3D00D13D4E /* RegisterVC.swift in Sources */,
 				F2AD58A41FBC821A00336B22 /* MainVC.swift in Sources */,
 				F2219ED61FB09F9600A9C7A7 /* DashboardVC.swift in Sources */,
-				F2C2B3AE1FC3277E00989214 /* dummyAPI.swift in Sources */,
 				F2219EC41FB08A7E00A9C7A7 /* AppDelegate.swift in Sources */,
 				F2716BD21FC5C85D0018711F /* PaneAnnotation.swift in Sources */,
 				F235C12D1FBF13BE00BD3E09 /* exhibitVC.swift in Sources */,

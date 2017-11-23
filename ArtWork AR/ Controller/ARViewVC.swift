@@ -23,7 +23,7 @@ class ARViewVC: UIViewController,ARSCNViewDelegate,UIImagePickerControllerDelega
     // creating location Manager variable
     let locationManager = CLLocationManager()
     
-    //1 miles = 1.609 km
+  
     
     // variable which will store imagepicker selected image
     var selectedImage : UIImage?

@@ -24,27 +24,91 @@ class SettingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("********")
-        print("userid:\(username)")
-        print("\n tokenid: \(tokenID)")
-        print("********")
+//        print("********")
+//        print("userid:\(username)")
+//        print("\n tokenid: \(tokenID)")
+//        print("********")
         // Do any additional setup after loading the view.
     }
 
 
     
+    
+    // Setting Radius for GPS
     @IBAction func radiusSetting(_ sender: Any) {
     
-        var radius:Float = 2.0
-        print("****** ", radius)
-        print(radiusSlider.value * 2, "*******")
-        radius = radius  * (radiusSlider.value * 2)
         
+        let radius:Float = 1609.0                //1 miles = 1.609 km
+
+        var currentRadius = radius * radiusSlider.value
+        
+        globalSetting.globalRadius = currentRadius
+        
+        
+        if unitButton.isOn{
+            
+            print("\(globalSetting.globalRadius) KM ")
+        }
+        
+        else {
+            
+           
+            
+            var mile = (globalSetting.globalRadius/1000) / 1.609
+            
+            print("\(mile) Miles")
+        }
+    }
+    
+    // Setting Pane Size
+    @IBAction func paneSetting(_ sender: Any) {
+        
+        var panesize : Float = 1.0
+        
+        // Formula to maintain ratio b/w width & height
+        panesize = (2.3 * paneSlider.value)
+       
+        // Default Width & Height
+        let width : Float = 3.0
+        let height : Float = 2.0
+        
+        // Setting Width & Height value global to the app
+        
+        globalSetting.globalWidth = (width * panesize) + width
+        globalSetting.globalheight = (height * panesize) + height
+      
+        // TESTING RESULT
+        print ("width:\(globalSetting.globalWidth) & height: \(globalSetting.globalheight)")
         
     }
     
-    @IBAction func paneSetting(_ sender: Any) {
+    
+    
+    // Action
+    @IBAction func unitConversion(_ sender: Any) {
+        
+        
+        // VALUE WILL BE IN KILOMETER
+        if unitButton.isOn == true{
+            print("CONVERTED UNIT FROM  MILES TO KM")
+
+            globalSetting.GlobalUnit = "KM"
+        }
+        
+        else{
+            print("CONVERTED UNIT FROM KM TO MILES")
+
+             globalSetting.GlobalUnit = "MILES"
+        }
     }
+    
+    
+    
+    
+    
+    
+    
+    // Function which will handle Logout Operation
     @IBAction func logoutButton(_ sender: Any) {
         
         Alamofire.request("https://exhibit-irl.com/api.php/?func=logout&username\(username)=&token=\(tokenID)", method: .post, parameters: nil)

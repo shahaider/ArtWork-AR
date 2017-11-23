@@ -42,7 +42,7 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
     var currentPtX = 0
 
     
-   
+   //******************    1 miles = 1.609 km  **********************
     
     
     override func viewDidLoad() {
@@ -172,13 +172,13 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
                         self.currentPtX = PtX1
 
                         print(currentPtX)
-                        let rotateAction = SCNAction.rotateBy(x: 0, y: 0, z: 0.02, duration: 0)
+                        let rotateAction = SCNAction.rotateBy(x: 0, y: 0, z: 0.04, duration: 0)
                         node.runAction(rotateAction)
                     }
                     else{
                         self.currentPtX = PtX1
 
-                        let rotateAction = SCNAction.rotateBy(x: 0, y: 0, z: -0.02, duration: 0)
+                        let rotateAction = SCNAction.rotateBy(x: 0, y: 0, z: -0.04, duration: 0)
                         node.runAction(rotateAction)
                     }
                     
