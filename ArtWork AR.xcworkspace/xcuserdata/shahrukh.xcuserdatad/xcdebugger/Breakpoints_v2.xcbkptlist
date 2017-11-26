@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtWork AR/ Controller/SettingVC.swift"
-            timestampString = "533146830.952348"
+            timestampString = "533234337.999108"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtWork AR/ Controller/SettingVC.swift"
-            timestampString = "533146830.952437"
+            timestampString = "533234337.99919"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "logoutButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtWork AR/ Controller/SettingVC.swift"
-            timestampString = "533146830.952508"
+            timestampString = "533234337.999243"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "logoutButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -121,13 +121,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ArtWork AR/ Controller/exhibitVC.swift"
-            timestampString = "533146830.952626"
+            filePath = "ArtWork AR/makepaneAPI.swift"
+            timestampString = "533225007.917247"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
-            landmarkName = "pinched(recognizer:)"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "makePane()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ArtWork AR/makepaneAPI.swift"
+            timestampString = "533225009.415868"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "makePane()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -23,6 +23,7 @@
 		F2716BD01FC5C0AF0018711F /* frame.png in Resources */ = {isa = PBXBuildFile; fileRef = F2716BCF1FC5C0AF0018711F /* frame.png */; };
 		F2716BD21FC5C85D0018711F /* PaneAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2716BD11FC5C85D0018711F /* PaneAnnotation.swift */; };
 		F28AF7AA1FC5A63100105240 /* pane.png in Resources */ = {isa = PBXBuildFile; fileRef = F28AF7A91FC5A63100105240 /* pane.png */; };
+		F29000571FC85BF200C7CBE7 /* makepaneAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29000561FC85BF200C7CBE7 /* makepaneAPI.swift */; };
 		F2AD58A41FBC821A00336B22 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AD58A31FBC821A00336B22 /* MainVC.swift */; };
 		F2B9B12F1FBDE0A5007CEBF8 /* ForgetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B9B12E1FBDE0A5007CEBF8 /* ForgetVC.swift */; };
 		F2C2B3AC1FC31D8600989214 /* ArtAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C2B3AB1FC31D8600989214 /* ArtAnnotation.swift */; };
@@ -49,6 +50,7 @@
 		F2716BCF1FC5C0AF0018711F /* frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frame.png; sourceTree = "<group>"; };
 		F2716BD11FC5C85D0018711F /* PaneAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaneAnnotation.swift; sourceTree = "<group>"; };
 		F28AF7A91FC5A63100105240 /* pane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pane.png; sourceTree = "<group>"; };
+		F29000561FC85BF200C7CBE7 /* makepaneAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = makepaneAPI.swift; sourceTree = "<group>"; };
 		F2AD58A31FBC821A00336B22 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		F2B9B12E1FBDE0A5007CEBF8 /* ForgetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetVC.swift; sourceTree = "<group>"; };
 		F2C2B3AB1FC31D8600989214 /* ArtAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtAnnotation.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				F26CC07F1FBABD66008BB5F0 /* globalSetting.swift */,
 				F2C2B3AB1FC31D8600989214 /* ArtAnnotation.swift */,
 				F2716BD11FC5C85D0018711F /* PaneAnnotation.swift */,
+				F29000561FC85BF200C7CBE7 /* makepaneAPI.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				F20D2C9C1FBB2A3D00D13D4E /* RegisterVC.swift in Sources */,
 				F2AD58A41FBC821A00336B22 /* MainVC.swift in Sources */,
 				F2219ED61FB09F9600A9C7A7 /* DashboardVC.swift in Sources */,
+				F29000571FC85BF200C7CBE7 /* makepaneAPI.swift in Sources */,
 				F2219EC41FB08A7E00A9C7A7 /* AppDelegate.swift in Sources */,
 				F2716BD21FC5C85D0018711F /* PaneAnnotation.swift in Sources */,
 				F235C12D1FBF13BE00BD3E09 /* exhibitVC.swift in Sources */,

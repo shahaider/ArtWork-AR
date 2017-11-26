@@ -131,6 +131,9 @@ class ARViewVC: UIViewController,ARSCNViewDelegate,UIImagePickerControllerDelega
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         
+        
+        // Create ALERT VC
+
         let alertVC = UIAlertController(title: "Photo Source", message: "Choose a Source", preferredStyle: .actionSheet)
         
         // "PHOTO LIBRARY" OPTION

@@ -67,17 +67,14 @@ class ArtAnnotation: LocationNode{
         self.AnnotationNode.addChildNode(paneNode)
         
 
-        
-        
-        
-        
+   // BILLBOARD VIEW for all 
         let billboardConstraint = SCNBillboardConstraint()
         billboardConstraint.freeAxes = SCNBillboardAxis.Y
         constraints = [billboardConstraint]
         
-        
+        makepaneAPI().makePane()
+
         self.addChildNode(self.AnnotationNode)
-        
     }
     
     

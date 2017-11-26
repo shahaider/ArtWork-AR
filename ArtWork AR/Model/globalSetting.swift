@@ -15,6 +15,8 @@ struct globalSetting{
     static var globalWidth:Float = 3
     static var globalheight : Float = 2
     static var GlobalUnit = "KM"
+    static var altitude : Float = 0.023
+    static var direction = 180
     
     static var tokenID: String = ""
     static var userName: String = ""

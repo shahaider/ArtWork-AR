@@ -67,6 +67,7 @@ class SettingVC: UIViewController {
         
         // Formula to maintain ratio b/w width & height
         panesize = (2.3 * paneSlider.value)
+        globalSetting.altitude = panesize
        
         // Default Width & Height
         let width : Float = 3.0

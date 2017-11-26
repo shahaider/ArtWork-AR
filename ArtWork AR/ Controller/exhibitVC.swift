@@ -40,14 +40,18 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
     // Selected Button
     var selectedButton = 0
     var currentPtX = 0
+    
+    
+    // Tap Count
+    var tapCount = 0
 
     
-   //******************    1 miles = 1.609 km  **********************
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    
         addButton.isHidden = true
         // CircleMenu Delegate
         addButton.delegate = self
@@ -63,10 +67,10 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
         imagepickerVC.delegate = self
         
         
+        
         // Start AR + corelocation element
         ARViewLocationView.run()
         
-       
         // Add components to ARViewLocationView
         ARViewLocationView.addSubview(labelView)
         ARViewLocationView.addSubview(addButton)
@@ -74,7 +78,9 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
 
         // Single Tap to make ADD BUTTON to appear
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        
         ARViewLocationView.addGestureRecognizer(singleTap)
+        
         
         // Pinch to Resize AR-object
         let pinch = UIPinchGestureRecognizer(target: self, action: #selector(pinched))
@@ -82,8 +88,29 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
         
         
         // Rotate to Resize AR-object
-        let rotate = UIRotationGestureRecognizer(target: self, action: #selector(rotateIt))
+        let rotate = UIPanGestureRecognizer(target: self, action: #selector(rotateIt))
         ARViewLocationView.addGestureRecognizer(rotate)
+        
+        // set_settings(default_radius,default_pane_size,distance_unit,username,token)
+        
+        guard let location = locationManager.location else{return}
+        
+ 
+        
+        Alamofire.request("https://exhibit-irl.com/api.php/?func=set_settings&default_radius=\(globalSetting.globalRadius)&default_pane_size=\(globalSetting.altitude)&distance_unit=\(globalSetting.GlobalUnit)&username=\(globalSetting.userName)&token=\(globalSetting.tokenID)", method: .post, parameters: nil)
+            .validate(contentType: ["application/json"])
+            .responseJSON { (response:DataResponse<Any>) in
+                
+                print(response)
+                
+                let json = JSON(response.value)
+                
+                
+                // check output
+                print(json)
+                
+        }
+        
         
         findArt()
     
@@ -103,14 +130,129 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
     
   // TAPPED FUNCTION
     @objc func tapped(recognizer : UITapGestureRecognizer){
+    
         
-        DispatchQueue.main.async {
-            self.addButton.isHidden = false
+        print(tapCount)
+        
+        // To enable to ADD BUTTON
+        if tapCount == 0{
+            
+            tapCount = 1
+            DispatchQueue.main.async {
+                self.addButton.isHidden = false
 
+            }
+        
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                self.addButton.isHidden = true
+            }
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.addButton.isHidden = true
+            
+            
+            // *************** ADD IMAGE TO EMPTY FRAME ******************
+        else if tapCount == 2{
+
+            if recognizer.view == ARViewLocationView{
+
+                let hitView = ARViewLocationView
+                let hitLocation = recognizer.location(in: hitView)
+
+                let hitTest = hitView.hitTest(hitLocation, options: [:])
+
+                if !hitTest.isEmpty{
+
+                    let hitResult = hitTest.first!
+
+
+                    // Frame is the  HITRESULT
+                    if hitResult.node.geometry?.name == "Frame"{
+                        let node = hitResult.node
+
+
+                        
+                        if selectedImage == nil{
+                            // Create ALERT VC
+                            
+                            let alertVC = UIAlertController(title: "Photo Source", message: "Choose a Source", preferredStyle: .actionSheet)
+                            
+                            // "PHOTO LIBRARY" OPTION
+                            
+                            alertVC.addAction(UIAlertAction(title: "PHOTO LIBRARY", style: .default, handler: { (action: UIAlertAction) in
+                                self.imagepickerVC.sourceType = .photoLibrary
+                                self.present(self.imagepickerVC, animated: true, completion: nil)
+                            }))
+                            
+                            // "CAMERA" OPTION
+                            alertVC.addAction(UIAlertAction(title: "CAMERA", style: .default, handler: { (action: UIAlertAction) in
+                                if UIImagePickerController.isSourceTypeAvailable(.camera){
+                                    
+                                    self.imagepickerVC.sourceType = .camera
+                                    self.present(self.imagepickerVC, animated: true, completion: nil)
+                                }
+                                else{
+                                    print("Camera not available")
+                                    
+                                }
+                            }))
+                            // "CANCEL" OPTION
+                            alertVC.addAction(UIAlertAction(title: "CANCEL", style: .default, handler: nil))
+                            self.present(alertVC, animated: true, completion: nil)
+                        }
+                            
+                            
+                            
+                        else{
+                        DispatchQueue.main.async {
+                            print(hitResult.node.geometry!)
+                            let arImage = self.selectedImage?.cgImage!
+                            
+                            let imagePlane = SCNPlane(width: (2.7), height: (1.7))
+                            imagePlane.firstMaterial?.diffuse.contents = UIImage(cgImage: arImage!)
+                            imagePlane.name = "IMAGE"
+                            let imageNode = SCNNode(geometry: imagePlane)
+                            
+                            
+                            hitResult.node.addChildNode(imageNode)
+                            
+                            self.InfoLabel.text = ("CHOOSE WHERE YOU WANT TO ADD ART")
+                            self.InfoLabel.textColor = UIColor.white
+                            self.selectedButton = 0
+                            self.selectedImage = nil
+                            self.tapCount = 0
+                            }
+                            
+                        }
+                        
+                    }
+
+                }
+
+            }
+
+
+        }
+            
+        // To Reset Tap value
+        else{
+            
+            if selectedButton == 2 {
+                tapCount = 2
+                
+                myArt()
+                InfoLabel.text = "TAP ON SCREEN TO ADD YOUR ART "
+                InfoLabel.textColor = UIColor.white
+                selectedButton == 0
+            }
+            
+            else{
+                tapCount = 0
+                
+                myArt()
+                InfoLabel.text = "TAP ON SCREEN TO ADD YOUR ART "
+                InfoLabel.textColor = UIColor.white
+            }
+           
         }
         
     }
@@ -127,16 +269,32 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
             
             if !hitTest.isEmpty{
                 
+                
+                InfoLabel.text = "Resize "
+                InfoLabel.textColor = UIColor.white
+
                 let hitResult = hitTest.first!
                 
                 
+                print((hitResult.node.geometry?.name)!)
                 // PANE is the  HITRESULT
-                if hitResult.node.geometry?.name == "Pane"{
-                    let node = hitResult.node
-                    
-                    let pinchAction = SCNAction.scale(by: recognizer.scale, duration: 0)
-                    node.runAction(pinchAction)
-                    recognizer.scale = 1
+                
+                
+                DispatchQueue.main.async {
+                    if hitResult.node.geometry?.name == "Pane" || (hitResult.node.geometry?.name)! == "Frame"{
+                        let node = hitResult.node
+                        
+                        let pinchAction = SCNAction.scale(by: recognizer.scale, duration: 0)
+                        node.runAction(pinchAction)
+                        recognizer.scale = 1
+                }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                        self.InfoLabel.text = "TAP ON SCREEN TO ADD YOUR ART "
+                        self.InfoLabel.textColor = UIColor.white
+                    })
+              
+//
+
                 }
             }
         }
@@ -156,34 +314,53 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
             
             if !hitTest.isEmpty{
                 
+                
+                InfoLabel.text = "Rotate"
+                InfoLabel.textColor = UIColor.white
+
                 let hitResult = hitTest.first!
                 
                 
+                
                 // PANE is the  HITRESULT
-                if hitResult.node.geometry?.name == "Pane"{
-                    let node = hitResult.node
-                    
-                    var PtX1 = Int(touchPoint.x)
-                    
-                    print("x = \(touchPoint.x)")
-                    print("y = \(touchPoint.y)")
-
-                    if self.currentPtX > PtX1{
-                        self.currentPtX = PtX1
-
-                        print(currentPtX)
-                        let rotateAction = SCNAction.rotateBy(x: 0, y: 0, z: 0.04, duration: 0)
-                        node.runAction(rotateAction)
+                
+                DispatchQueue.main.async {
+                    if hitResult.node.geometry?.name == "Pane" || (hitResult.node.geometry?.name)! == "Frame"{
+                        let node = hitResult.node
+                        
+                        var PtX1 = Int(touchPoint.x)
+                        
+                        print("x = \(touchPoint.x)")
+                        //                    print("y = \(touchPoint.y)")
+                        
+                        
+                        
+                        if self.currentPtX > PtX1{
+                            self.currentPtX = PtX1
+                            
+                            let rotateAction = SCNAction.rotateBy(x: 0, y: 0, z: 0.07, duration: 0)
+                            node.runAction(rotateAction)
+                         
+                            
+                        }
+                        else{
+                            self.currentPtX = PtX1
+                            
+                            let rotateAction = SCNAction.rotateBy(x: 0, y: 0, z: -0.04, duration: 0)
+                            node.runAction(rotateAction)
+                            
+                            
+                        }
+                        
+                        
                     }
-                    else{
-                        self.currentPtX = PtX1
-
-                        let rotateAction = SCNAction.rotateBy(x: 0, y: 0, z: -0.04, duration: 0)
-                        node.runAction(rotateAction)
-                    }
-                    
-                  
                 }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                    self.InfoLabel.text = "TAP ON SCREEN TO ADD YOUR ART "
+                    self.InfoLabel.textColor = UIColor.white
+                })
+                
+            
             }
         }
         
@@ -205,7 +382,8 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
 
             DispatchQueue.main.async {
                 self.ARViewLocationView.addLocationNodeForCurrentPosition(locationNode: paneAnnotationNode)
-                self.selectedButton = 0
+//                self.selectedButton = 0
+                self.tapCount = 2
             }
             
         }
@@ -213,17 +391,22 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
         else{
         if let image = selectedImage{
             
-
+ print(image)
             let ArtAnnotationNode = ArtAnnotation(location: location, Image: image)
             
             
             DispatchQueue.main.async {
                 self.ARViewLocationView.addLocationNodeForCurrentPosition(locationNode: ArtAnnotationNode)
+                self.tapCount = 0
+                self.selectedImage = nil
+
             }
         }
         
         }
     }
+    
+    
     // IMPORT ART FROM WEB-SERVICE
     func findArt(){
         
@@ -233,8 +416,30 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
         InfoLabel.text = "TAP ON SCREEN TO ADD YOUR ART "
         InfoLabel.textColor = UIColor.white
         
-        
+        //TESTING Assign variable values
+        print("**************")
+        print("Latitude:\(location.coordinate.latitude)")
+        print("Longitude:\(location.coordinate.longitude)")
+        print("Radius: \(globalSetting.globalRadius)")
+        print("user: \(globalSetting.userName)")
+        print("token: \(globalSetting.tokenID)")
+        print("**************")
+
+
+        // GET RESPONSE VALUE FROM WEB-SERVICE API
+        Alamofire.request("https://exhibit-irl.com/api.php/?func=get_pane&long=2\(location.coordinate.longitude)&lat=\(location.coordinate.latitude)&radius=\(globalSetting.globalRadius)&username=\(globalSetting.userName)&token=\(globalSetting.tokenID)", method: .get, parameters: nil)
+            .validate(contentType: ["application/json"])
+            .responseJSON { (response:DataResponse<Any>) in
+                
+                                print(response)
+                
+                let json = JSON(response.value)
+                
+                
+                // check output
+                                    print(json)
        
+        }
         
         // ***********************
         
@@ -285,9 +490,14 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
     
     func circleMenu(_ circleMenu: CircleMenu, buttonDidSelected button: UIButton, atIndex: Int) {
         
+        
+        
+        print ("tap value : \(tapCount)")
+        
+        //  SELECTED: CAMERA
         if atIndex == 0{
             if UIImagePickerController.isSourceTypeAvailable(.camera){
-                
+                ARViewLocationView.pause()
                 imagepickerVC.sourceType = .camera
                 self.present(imagepickerVC, animated: true, completion: nil)
             }
@@ -297,15 +507,17 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
             }
         }
        
+            
+            // SELECTED: PHOTOLIBRARY
         else if atIndex == 1{
             imagepickerVC.sourceType = .photoLibrary
             self.present(imagepickerVC, animated: true, completion: nil)
             addButton.isHidden = true
         }
         
+            // SELECTED : FRAME
         else if atIndex == 2{
             selectedButton = atIndex
-            self.myArt()
             addButton.isHidden = true
         }
         
@@ -314,18 +526,25 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
     
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        print("***********")
-        print(info)
-        print("*********")
+      
         
         let chooseimage = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         self.selectedImage = chooseimage
         
-        print(self.selectedImage!)
         
         picker.dismiss(animated: true, completion: nil)
-        self.myArt()
+        ARViewLocationView.run()
+
+        if selectedButton == 2{
+            
+            self.InfoLabel.text = ("TAP AGAIN TO  ADD PHOTO")
+            InfoLabel.textColor = UIColor.white
+        }
+        else{
+        self.InfoLabel.text = ("CHOOSE WHERE YOU WANT TO ADD ART")
+        InfoLabel.textColor = UIColor.white
+        }
     }
     
     // FUNCTION WILL HANDLE CANCEL OPERATION
@@ -335,17 +554,4 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
 
 }
 
-extension UIImage
-{
-    // convenience function in UIImage extension to resize a given image
-    func convert(toSize size:CGSize, scale:CGFloat) ->UIImage
-    {
-        let imgRect = CGRect(origin: CGPoint(x:0.0, y:0.0), size: size)
-        UIGraphicsBeginImageContextWithOptions(size, false, scale)
-        self.draw(in: imgRect)
-        let copied = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return copied!
-    }
-}
+
