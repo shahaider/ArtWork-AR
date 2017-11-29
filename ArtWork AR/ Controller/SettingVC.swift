@@ -29,6 +29,7 @@ class SettingVC: UIViewController {
 //        print("\n tokenid: \(tokenID)")
 //        print("********")
         // Do any additional setup after loading the view.
+        
     }
 
 

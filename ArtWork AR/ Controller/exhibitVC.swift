@@ -216,7 +216,7 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
                             hitResult.node.addChildNode(imageNode)
                             
                             self.InfoLabel.text = ("CHOOSE WHERE YOU WANT TO ADD ART")
-                            self.InfoLabel.textColor = UIColor.white
+//                            self.InfoLabel.textColor = UIColor.white
                             self.selectedButton = 0
                             self.selectedImage = nil
                             self.tapCount = 0
@@ -241,7 +241,7 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
                 
                 myArt()
                 InfoLabel.text = "TAP ON SCREEN TO ADD YOUR ART "
-                InfoLabel.textColor = UIColor.white
+//                InfoLabel.textColor = UIColor.white
                 selectedButton == 0
             }
             
@@ -250,7 +250,7 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
                 
                 myArt()
                 InfoLabel.text = "TAP ON SCREEN TO ADD YOUR ART "
-                InfoLabel.textColor = UIColor.white
+//                InfoLabel.textColor = UIColor.white
             }
            
         }
@@ -271,7 +271,7 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
                 
                 
                 InfoLabel.text = "Resize "
-                InfoLabel.textColor = UIColor.white
+//                InfoLabel.textColor = UIColor.white
 
                 let hitResult = hitTest.first!
                 
@@ -290,7 +290,7 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
                 }
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                         self.InfoLabel.text = "TAP ON SCREEN TO ADD YOUR ART "
-                        self.InfoLabel.textColor = UIColor.white
+//                        self.InfoLabel.textColor = UIColor.white
                     })
               
 //
@@ -316,7 +316,7 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
                 
                 
                 InfoLabel.text = "Rotate"
-                InfoLabel.textColor = UIColor.white
+//                InfoLabel.textColor = UIColor.white
 
                 let hitResult = hitTest.first!
                 
@@ -357,7 +357,7 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
                 }
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
                     self.InfoLabel.text = "TAP ON SCREEN TO ADD YOUR ART "
-                    self.InfoLabel.textColor = UIColor.white
+//                    self.InfoLabel.textColor = UIColor.white
                 })
                 
             
@@ -414,7 +414,7 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
         
         
         InfoLabel.text = "TAP ON SCREEN TO ADD YOUR ART "
-        InfoLabel.textColor = UIColor.white
+//        InfoLabel.textColor = UIColor.white
         
         //TESTING Assign variable values
         print("**************")
@@ -539,11 +539,11 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
         if selectedButton == 2{
             
             self.InfoLabel.text = ("TAP AGAIN TO  ADD PHOTO")
-            InfoLabel.textColor = UIColor.white
+//            InfoLabel.textColor = UIColor.white
         }
         else{
         self.InfoLabel.text = ("CHOOSE WHERE YOU WANT TO ADD ART")
-        InfoLabel.textColor = UIColor.white
+//        InfoLabel.textColor = UIColor.white
         }
     }
     

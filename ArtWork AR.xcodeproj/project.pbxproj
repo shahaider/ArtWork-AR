@@ -19,6 +19,7 @@
 		F235C12D1FBF13BE00BD3E09 /* exhibitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F235C12C1FBF13BE00BD3E09 /* exhibitVC.swift */; };
 		F24A66781FC2AF99003006C7 /* gallery.png in Resources */ = {isa = PBXBuildFile; fileRef = F24A66761FC2AF99003006C7 /* gallery.png */; };
 		F24A66791FC2AF99003006C7 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = F24A66771FC2AF99003006C7 /* camera.png */; };
+		F25D10221FCD364100CC2F42 /* CustomizeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D10211FCD364100CC2F42 /* CustomizeButton.swift */; };
 		F26CC0801FBABD66008BB5F0 /* globalSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26CC07F1FBABD66008BB5F0 /* globalSetting.swift */; };
 		F2716BD01FC5C0AF0018711F /* frame.png in Resources */ = {isa = PBXBuildFile; fileRef = F2716BCF1FC5C0AF0018711F /* frame.png */; };
 		F2716BD21FC5C85D0018711F /* PaneAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2716BD11FC5C85D0018711F /* PaneAnnotation.swift */; };
@@ -27,6 +28,9 @@
 		F2AD58A41FBC821A00336B22 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AD58A31FBC821A00336B22 /* MainVC.swift */; };
 		F2B9B12F1FBDE0A5007CEBF8 /* ForgetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B9B12E1FBDE0A5007CEBF8 /* ForgetVC.swift */; };
 		F2C2B3AC1FC31D8600989214 /* ArtAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C2B3AB1FC31D8600989214 /* ArtAnnotation.swift */; };
+		F2D6BA541FCDB21B00B2C051 /* CustomizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D6BA531FCDB21B00B2C051 /* CustomizeView.swift */; };
+		F2D6BA561FCDBB7500B2C051 /* customizeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D6BA551FCDBB7500B2C051 /* customizeImage.swift */; };
+		F2FAC3341FCEFEFC0063C2B3 /* dashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FAC3331FCEFEFC0063C2B3 /* dashboardCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,7 @@
 		F235C12C1FBF13BE00BD3E09 /* exhibitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = exhibitVC.swift; sourceTree = "<group>"; };
 		F24A66761FC2AF99003006C7 /* gallery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gallery.png; sourceTree = "<group>"; };
 		F24A66771FC2AF99003006C7 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		F25D10211FCD364100CC2F42 /* CustomizeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeButton.swift; sourceTree = "<group>"; };
 		F26CC07F1FBABD66008BB5F0 /* globalSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globalSetting.swift; sourceTree = "<group>"; };
 		F2716BCF1FC5C0AF0018711F /* frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frame.png; sourceTree = "<group>"; };
 		F2716BD11FC5C85D0018711F /* PaneAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaneAnnotation.swift; sourceTree = "<group>"; };
@@ -54,6 +59,9 @@
 		F2AD58A31FBC821A00336B22 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		F2B9B12E1FBDE0A5007CEBF8 /* ForgetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetVC.swift; sourceTree = "<group>"; };
 		F2C2B3AB1FC31D8600989214 /* ArtAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtAnnotation.swift; sourceTree = "<group>"; };
+		F2D6BA531FCDB21B00B2C051 /* CustomizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeView.swift; sourceTree = "<group>"; };
+		F2D6BA551FCDBB7500B2C051 /* customizeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customizeImage.swift; sourceTree = "<group>"; };
+		F2FAC3331FCEFEFC0063C2B3 /* dashboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dashboardCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +126,7 @@
 				F2219ECF1FB08A7E00A9C7A7 /* Info.plist */,
 				F2AD58A51FBC832A00336B22 /*  Controller */,
 				F2C5AC9D1FC701D200A323BA /* Model */,
+				F2FAC3351FCF003D0063C2B3 /* View */,
 			);
 			path = "ArtWork AR";
 			sourceTree = "<group>";
@@ -152,6 +161,17 @@
 			children = (
 			);
 			path = image;
+			sourceTree = "<group>";
+		};
+		F2FAC3351FCF003D0063C2B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F25D10211FCD364100CC2F42 /* CustomizeButton.swift */,
+				F2D6BA531FCDB21B00B2C051 /* CustomizeView.swift */,
+				F2D6BA551FCDBB7500B2C051 /* customizeImage.swift */,
+				F2FAC3331FCEFEFC0063C2B3 /* dashboardCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +277,7 @@
 				"${BUILT_PRODUCTS_DIR}/ARCL/ARCL.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CircleMenu/CircleMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/CircleProgressView/CircleProgressView.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -265,6 +286,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ARCL.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CircleMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CircleProgressView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -301,11 +323,15 @@
 				F26CC0801FBABD66008BB5F0 /* globalSetting.swift in Sources */,
 				F2219EDA1FB09FD100A9C7A7 /* SettingVC.swift in Sources */,
 				F20D2C9C1FBB2A3D00D13D4E /* RegisterVC.swift in Sources */,
+				F2FAC3341FCEFEFC0063C2B3 /* dashboardCell.swift in Sources */,
 				F2AD58A41FBC821A00336B22 /* MainVC.swift in Sources */,
+				F25D10221FCD364100CC2F42 /* CustomizeButton.swift in Sources */,
 				F2219ED61FB09F9600A9C7A7 /* DashboardVC.swift in Sources */,
 				F29000571FC85BF200C7CBE7 /* makepaneAPI.swift in Sources */,
 				F2219EC41FB08A7E00A9C7A7 /* AppDelegate.swift in Sources */,
 				F2716BD21FC5C85D0018711F /* PaneAnnotation.swift in Sources */,
+				F2D6BA541FCDB21B00B2C051 /* CustomizeView.swift in Sources */,
+				F2D6BA561FCDBB7500B2C051 /* customizeImage.swift in Sources */,
 				F235C12D1FBF13BE00BD3E09 /* exhibitVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

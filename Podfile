@@ -15,4 +15,6 @@ pod 'ARCL'
 
 pod 'CircleMenu'
 
+pod 'CircleProgressView'
+
 end
