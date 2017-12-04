@@ -19,6 +19,9 @@ import ARCL
 class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
     
+    // Art Profile View (Thumb UP & Thumb Down)
+    @IBOutlet weak var artView: UIView!
+    
     @IBOutlet weak var labelView: UIView!
     @IBOutlet weak var InfoLabel: UILabel!
    
@@ -32,6 +35,9 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
     // Creating ImagePicker Variable
     let imagepickerVC = UIImagePickerController()
     
+    // ART PROFILE SUBVIEW
+    
+    var profileView : ArtProfileView!
     
     // Selected IMAGE
     var selectedImage : UIImage?
@@ -41,7 +47,7 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
     var selectedButton = 0
     var currentPtX = 0
     
-    
+   
     // Tap Count
     var tapCount = 0
 
@@ -50,8 +56,7 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    
+
         addButton.isHidden = true
         // CircleMenu Delegate
         addButton.delegate = self
@@ -66,6 +71,17 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
         // Imagepicker Delegate & Variable
         imagepickerVC.delegate = self
         
+        // ArtProfileView Initialize
+        if let artProfile = Bundle.main.loadNibNamed("ArtProfileView", owner: self, options: nil)?.first as? ArtProfileView  {
+            
+            
+            
+                profileView = artProfile
+            profileView.isHidden = true
+            
+        }
+        
+        
         
         
         // Start AR + corelocation element
@@ -75,6 +91,9 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
         ARViewLocationView.addSubview(labelView)
         ARViewLocationView.addSubview(addButton)
         view.addSubview(ARViewLocationView)
+        
+        
+        
 
         // Single Tap to make ADD BUTTON to appear
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(tapped))
@@ -123,6 +142,9 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
         
         ARViewLocationView.frame = view.bounds
         
+        ARViewLocationView.addSubview(profileView)
+        let centre =  UIApplication.shared.keyWindow!.center
+        self.profileView.center = CGPoint(x: centre.x, y: centre.y+100)
         
         
     }
@@ -134,8 +156,48 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
         
         print(tapCount)
         
-        // To enable to ADD BUTTON
-        if tapCount == 0{
+        if tapCount == 0 {
+            
+            if recognizer.view == ARViewLocationView{
+                
+                let hitView = ARViewLocationView
+                let hitLocation = recognizer.location(in: hitView)
+                
+                let hitTest = hitView.hitTest(hitLocation, options: [:])
+                
+                
+                
+            // ART PROFILE enable
+                if !hitTest.isEmpty{
+                    
+                    let hitResult = hitTest.first!
+                    
+                    
+                    // Frame is the  HITRESULT
+                    if hitResult.node.geometry?.name == "IMAGE"{
+                    
+                        
+                        DispatchQueue.main.async {
+                        self.profileView.isHidden = false
+                            
+                            self.profileView.thumbUpButton.addTarget(self, action: #selector(self.ThumbUpAction), for: .touchUpInside)
+                            
+                            
+                             self.profileView.thumbDownButton.addTarget(self, action: #selector(self.ThumbDownAction), for: .touchUpInside)
+                            
+                            
+                    }
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                            self.profileView.isHidden = true
+                        })
+                    
+                  
+                    }
+                        }
+            
+            // IF NO Hit-Test (To enable to ADD BUTTON)
+                else{
             
             tapCount = 1
             DispatchQueue.main.async {
@@ -146,9 +208,9 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 self.addButton.isHidden = true
             }
+                }
+            }
         }
-        
-            
             
             // *************** ADD IMAGE TO EMPTY FRAME ******************
         else if tapCount == 2{
@@ -225,6 +287,7 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
                         }
                         
                     }
+                 
 
                 }
 
@@ -254,6 +317,21 @@ class exhibitVC: UIViewController, CLLocationManagerDelegate,CircleMenuDelegate,
             }
            
         }
+        
+    }
+    
+    //
+  @objc func ThumbUpAction(){
+    
+    print("************THUMBS UP********************")
+    self.profileView.thumbUpValue.text = String(Int(self.profileView.thumbUpValue.text!)! + 1)
+        
+    }
+    
+    @objc func ThumbDownAction(){
+        
+        print("************THUMBS UP********************")
+        self.profileView.thumbDownValue.text = String(Int(self.profileView.thumbDownValue.text!)! - 1)
         
     }
     

@@ -19,6 +19,9 @@ class ARViewVC: UIViewController,ARSCNViewDelegate,UIImagePickerControllerDelega
     @IBOutlet weak var actionButton: UIButton!
     @IBOutlet weak var PlaneStatus: UILabel!
     
+    // ART Profile View (thumb up & thumb down)
+    
+    let artProfile = Bundle.main.loadNibNamed("ArtProfileView", owner: self, options: nil)?.first 
     
     // creating location Manager variable
     let locationManager = CLLocationManager()

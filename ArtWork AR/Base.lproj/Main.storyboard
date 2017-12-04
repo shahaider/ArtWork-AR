@@ -41,11 +41,11 @@
                                     <action selector="submitButton:" destination="gKK-Ny-kPL" eventType="touchUpInside" id="K7q-3K-S9l"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="iD3-X7-cTH">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="001blackmaleusersymbol" translatesAutoresizingMaskIntoConstraints="NO" id="iD3-X7-cTH">
                                 <rect key="frame" x="19" y="227" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="email" translatesAutoresizingMaskIntoConstraints="NO" id="mXT-BV-3Xg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Email-1" translatesAutoresizingMaskIntoConstraints="NO" id="mXT-BV-3Xg">
                                 <rect key="frame" x="19" y="328" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -235,11 +235,11 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="4Nm-fk-kQx">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Password" translatesAutoresizingMaskIntoConstraints="NO" id="4Nm-fk-kQx">
                                         <rect key="frame" x="295" y="83" width="20" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="WMX-yy-J9t">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="001blackmaleusersymbol" translatesAutoresizingMaskIntoConstraints="NO" id="WMX-yy-J9t">
                                         <rect key="frame" x="295" y="29" width="20" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -356,15 +356,15 @@
                                 <rect key="frame" x="0.0" y="247" width="375" height="206"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="wb9-rz-nqy">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="001blackmaleusersymbol" translatesAutoresizingMaskIntoConstraints="NO" id="wb9-rz-nqy">
                                         <rect key="frame" x="162" y="46" width="20" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="u0V-gA-rdy">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Password" translatesAutoresizingMaskIntoConstraints="NO" id="u0V-gA-rdy">
                                         <rect key="frame" x="315" y="161" width="20" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="email" translatesAutoresizingMaskIntoConstraints="NO" id="ubG-J4-9hf">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Email-1" translatesAutoresizingMaskIntoConstraints="NO" id="ubG-J4-9hf">
                                         <rect key="frame" x="315" y="105" width="20" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -410,7 +410,7 @@
                                         <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="rmP-b0-HJu">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="001blackmaleusersymbol" translatesAutoresizingMaskIntoConstraints="NO" id="rmP-b0-HJu">
                                         <rect key="frame" x="326" y="45" width="20" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -593,7 +593,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rqQ-CD-Y8r">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Art" translatesAutoresizingMaskIntoConstraints="NO" id="rqQ-CD-Y8r">
                                                             <rect key="frame" x="26" y="9" width="25" height="25"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
@@ -614,7 +614,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="10S-n8-DQ6"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Dashboard" image="dashboard" id="glc-FQ-q3p"/>
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="Analysis" id="glc-FQ-q3p"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="contentTable" destination="8kA-v3-mug" id="UQ7-4d-Wyi"/>
@@ -659,16 +659,28 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="rxs-7W-0W6"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="AR" image="ar" id="0BN-Kg-3Fb"/>
+                    <tabBarItem key="tabBarItem" title="AR" image="Camera-1" id="0BN-Kg-3Fb"/>
                     <connections>
                         <outlet property="InfoLabel" destination="D50-aD-whV" id="61J-JL-xTD"/>
                         <outlet property="addButton" destination="XYw-W2-vtv" id="lxy-3j-6es"/>
+                        <outlet property="artView" destination="5xY-FN-Cxy" id="ME3-RB-Lwi"/>
                         <outlet property="labelView" destination="gKc-2c-dk0" id="ZHT-R5-IR8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yH6-gT-ken" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="5xY-FN-Cxy" customClass="CustomizeView" customModule="ArtWork_AR" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="150" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <viewLayoutGuide key="safeArea" id="Io4-1b-uEt"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="50"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </objects>
-            <point key="canvasLocation" x="1989.5999999999999" y="966.56671664167925"/>
+            <point key="canvasLocation" x="2610" y="910"/>
         </scene>
         <!--View-->
         <scene sceneID="U9j-Gz-0GS">
@@ -787,7 +799,9 @@
                         <color key="tintColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="P5w-hR-qBQ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Setting" image="setting" id="Ut7-J0-V20"/>
+                    <tabBarItem key="tabBarItem" title="Setting" image="setting" id="Ut7-J0-V20">
+                        <color key="badgeColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="paneSlider" destination="45j-PA-uBX" id="dip-tz-IN0"/>
                         <outlet property="radiusSlider" destination="NAb-8k-QOA" id="3Np-6n-zCU"/>
@@ -806,8 +820,9 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="N1J-X7-mgf">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.26738965911154289" green="0.64438274489046588" blue="0.96993559598922729" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="selectedImageTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="TNl-1U-MZI" kind="relationship" relationship="viewControllers" id="MVD-80-vPa"/>
@@ -821,18 +836,19 @@
         </scene>
     </scenes>
     <resources>
+        <image name="001blackmaleusersymbol" width="128" height="128"/>
+        <image name="Analysis" width="30" height="30"/>
+        <image name="Art" width="512" height="512"/>
+        <image name="Camera-1" width="30" height="30"/>
+        <image name="Email-1" width="64" height="64"/>
         <image name="IMG_0725" width="1932" height="2576"/>
+        <image name="Password" width="128" height="128"/>
         <image name="add" width="40" height="40"/>
         <image name="ar" width="25" height="25"/>
-        <image name="dashboard" width="25" height="25"/>
-        <image name="email" width="40" height="40"/>
-        <image name="lock" width="40" height="40"/>
         <image name="logo" width="440" height="433"/>
         <image name="setting" width="25" height="25"/>
-        <image name="user" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ORg-fb-L2Z"/>
         <segue reference="1af-cc-Msx"/>
     </inferredMetricsTieBreakers>
 </document>
